@@ -2,6 +2,7 @@ document.getElementById('deposit-button').addEventListener('click',function(){
 
 const depositInput=document.getElementById('deposit');
 const depositAmounttext=depositInput.value;
+if(depositAmounttext>0){
 const newDeposit=parseFloat(depositAmounttext);
 console.log(newDeposit);
 
@@ -20,12 +21,16 @@ const newbalancetotal=previousbalance+newDeposit;
 balancetotal.innerText=newbalancetotal;
 
 depositInput.value='';
-
+}
+else{
+    console.log(alert("Input a positive amount"));
+}
 
 });
 document.getElementById('withdraw-button').addEventListener('click',function(){
 const withdrawInput=document.getElementById('Withdraw');
 const withdrawValue=withdrawInput.value;
+if(withdrawValue>0){
 const newwithdraw=parseFloat(withdrawValue);
 
 
@@ -48,7 +53,10 @@ balancetotal.innerText=newbalance;
 
 withdrawInput.value='';
 
-    
+} 
+else{
+    console.log(alert("Enter a postive amount"))
+}
 });
 
 
